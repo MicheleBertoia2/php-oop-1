@@ -3,7 +3,7 @@
 require_once __DIR__ . '/db.php';
 
 // var_dump($movies[0]->getBasicInfo())
-// var_dump($movies[0]->genres)
+var_dump($movies[0])
 
 ?>
 
@@ -43,7 +43,9 @@ require_once __DIR__ . '/db.php';
           <ul>
 
             <?php if($movie->genres): foreach($movie->genres as $genre) : ?>
-                 <?php echo implode(", ", $genre)?>
+                 <?php foreach($genre as $val) {
+                  echo "<li>$val</li>";
+                 }?>
              <?php endforeach ?>
              <?php else :?>
               <?php echo "-" ?>
