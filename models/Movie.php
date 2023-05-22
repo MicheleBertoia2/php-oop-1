@@ -17,8 +17,8 @@ class Movie {
   }
 
   
-  public function getInfo($var){
-    return $this->$var;
+  public function getBasicInfo(){
+    return "titolo: " . $this->title . " data di uscita: " . $this->public_date;
   }
 }
 

@@ -2,8 +2,7 @@
 
 require_once __DIR__ . '/db.php';
 
-var_dump($movies)
-
+// var_dump($movies[0]->getBasicInfo())
 
 ?>
 
@@ -20,8 +19,34 @@ var_dump($movies)
 </head>
 <body>
 
-<div class="container">
-  <h1>Films</h1>
+<div class="container my-5">
+  <h1 class="mb-4">Films</h1>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Titolo</th>
+      <th scope="col">Data di uscita</th>
+      <th scope="col">Generi</th>
+      <th scope="col">Voto</th>
+      <th scope="col">18+</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <?php foreach($movies as $movie) : ?>
+      <tr>
+        <th scope="row"><?php echo $movie->title ?></th>
+        <td><?php echo $movie->public_date ?></td>
+        <td>generi</td>
+        <td><?php echo $movie->vote ?></td>
+        <td><?php echo ($movie->adults)  ? "SI" :  "NO"; ?></td>
+      </tr>
+    <?php endforeach ?>
+
+
+  </tbody>
+</table>
 </div>
 
   
